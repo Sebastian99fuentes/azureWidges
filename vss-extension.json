@@ -1,0 +1,130 @@
+{
+    "manifestVersion": 1,
+    "id": "PipelinesWidges3",
+    "version": "1.1.1",
+    "name": "PipelinesWidges3",
+    "description": "Pipelies de Saludsa",
+    "publisher": "sebastest",
+    "categories": ["Azure Boards"],
+    "tags": [
+        
+        "tests",
+        "dashboards"
+
+    ],
+    "content": {
+        "details": {
+            "path": "docs/overview.md"
+        }
+    },
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "icons": {
+        "default": "img/logo.png"
+    },
+    "demands": ["contribution/ms.vss-dashboards-web.widget-sdk-version-2", "contribution/ms.vss-web.charts-service"],
+    "contributions": [
+        {
+            "id": "nightly-chart",
+            "type": "ms.vss-dashboards-web.widget",
+            "targets": [
+                "ms.vss-dashboards-web.widget-catalog",
+                ".nightly-chart.Configuration"
+            ],
+            "properties": {
+                "name": "testsf",
+                "isNameConfigurable": true,
+                "description": "Resultados de un pipeline",
+                "catalogIconUrl": "img/logo.png",
+                "uri": "nightly-chart.html",
+                "supportedSizes": [
+                    {
+                        "rowSpan": 2,
+                        "columnSpan": 2
+                    },
+                    {
+                        "rowSpan": 2,
+                        "columnSpan": 3
+                    },
+                    {
+                        "rowSpan": 2,
+                        "columnSpan": 4
+                    },
+                    {
+                        "rowSpan": 2,
+                        "columnSpan": 5
+                    },
+                    {
+                        "rowSpan": 3,
+                        "columnSpan": 2
+                    },
+                    {
+                        "rowSpan": 3,
+                        "columnSpan": 3
+                    },
+                    {
+                        "rowSpan": 3,
+                        "columnSpan": 4
+                    },
+                    {
+                        "rowSpan": 3,
+                        "columnSpan": 5
+                    }
+                ],
+                "supportedScopes": [
+                    "project_team"
+                ]
+            }
+        },
+        {
+            "id": "nightly-chart.Configuration",
+            "type": "ms.vss-dashboards-web.widget-configuration",
+            "targets": [ "ms.vss-dashboards-web.widget-configuration" ],
+            "properties": {
+                "name": "Nightly Test Runs Configuration",
+                "description": "Configures the nightly chart widget",
+                "uri": "nightly-configuration.html"
+            }
+        }
+ 
+    ],
+    "files": [
+        {
+            "path": "nightly-chart.html",
+            "addressable": true
+        },
+        {
+            "path": "nightly-configuration.html",
+            "addressable": true
+        },
+        {
+            "path": "sdk/scripts/VSS.SDK.js",
+            "addressable": true
+        },
+        {
+            "path": "img",
+            "addressable": true
+        },
+        {
+            "path": "scripts",
+            "addressable": true
+        },
+        {
+            "path": "docs",
+            "addressable": true
+        }
+    ],
+    "scopes": [
+        "vso.build",
+        "vso.code",
+        "vso.identity",
+        "vso.test"
+    ],
+    "galleryFlags": [
+        "Preview",
+        "Public"
+    ]
+}
